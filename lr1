@@ -1,0 +1,82 @@
+<Window x:Class="Task1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="2.5*"></ColumnDefinition>
+            <ColumnDefinition Width="8*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="8*"></ColumnDefinition>
+            <ColumnDefinition Width="2.5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Expander Header="Компания" x:Name="company_group" IsExpanded="True" Grid.RowSpan="5">
+            <ScrollViewer>
+                <StackPanel Background="LightGray">
+                    <RadioButton IsChecked="True">Лнит</RadioButton>
+                    <RadioButton>СКБ Котнтур</RadioButton>
+                    <RadioButton>Ростех</RadioButton>
+                    <RadioButton>Ростлеком</RadioButton>
+                    <RadioButton>Cisco</RadioButton>
+                    <RadioButton>Asbis</RadioButton>
+                    <RadioButton>Лнит</RadioButton>
+                    <RadioButton>СКБ Котнтур</RadioButton>
+                    <RadioButton>Ростех</RadioButton>
+                    <RadioButton>Ростлеком</RadioButton>
+                    <RadioButton>Cisco</RadioButton>
+                    <RadioButton>Asbis</RadioButton>
+                    <RadioButton>Лнит</RadioButton>
+                    <RadioButton>СКБ Котнтур</RadioButton>
+                    <RadioButton>Ростех</RadioButton>
+                    <RadioButton>Ростлеком</RadioButton>
+                    <RadioButton>Cisco</RadioButton>
+                    <RadioButton>Asbis</RadioButton>
+                </StackPanel>
+            </ScrollViewer>
+        </Expander>
+        <GroupBox Header="Компиляторы" Grid.Column="1" Grid.ColumnSpan="5">
+            <StackPanel>
+                <CheckBox IsChecked="True">Visual Studio</CheckBox>
+                <CheckBox>Visual Studio Code</CheckBox>
+                <CheckBox>XCode</CheckBox>
+                <CheckBox>PyCharm</CheckBox>
+                <CheckBox>Spuder</CheckBox>
+                <CheckBox IsChecked="True">Pydev</CheckBox>
+                <CheckBox>Code Blocks</CheckBox>
+                <CheckBox>Dev C++</CheckBox>
+            </StackPanel>
+        </GroupBox>
+        <Grid Grid.Column="2" Grid.Row="2">
+            <Button x:Name="send_button" Background="#8E9F60" Foreground="#3D4653" FontFamily="Arial Black" FontSize="15" Content="Сохранить выбор"  MaxWidth="300" MaxHeight="75"></Button>
+        </Grid>
+        <Grid Grid.Column="4" Grid.Row="2">
+            <Button x:Name="drop_button"  Background="#8E9F60" Foreground="#3D4653" FontFamily="Arial Black" FontSize="15" Content="Отменить выбор" MaxWidth="300" MaxHeight="75"></Button>
+        </Grid>
+        <GroupBox Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Margin="15 0 15 0">
+            <WrapPanel>
+                <CheckBox>Администратор баз данных</CheckBox>
+                <CheckBox>Администратор вычислительной сети</CheckBox>
+                <CheckBox>администратор защиты</CheckBox>
+                <CheckBox>Аналитик программного обеспечения</CheckBox>
+                <CheckBox>Архитектор программного обеспечения</CheckBox>
+                <CheckBox >Ведущий программист</CheckBox>
+                <CheckBox>Контент-менеджер</CheckBox>
+                <CheckBox>Тестировщик</CheckBox>
+                <CheckBox>Технический писатель</CheckBox>
+                <CheckBox>Системный аналитик</CheckBox>
+            </WrapPanel>
+        </GroupBox>
+    </Grid>
+</Window>
