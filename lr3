@@ -1,0 +1,89 @@
+<Window x:Class="Task3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task3"
+        mc:Ignorable="d"
+        Title="Агенство фотографий" Height="450" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Viewbox MaxHeight="50" VerticalAlignment="Top">
+            <TextBlock  Foreground="DarkGray" FontSize="16" FontFamily="Impact" HorizontalAlignment="Center" >Наши лучшие работы</TextBlock>
+        </Viewbox>
+        <ScrollViewer Margin="0 50 0 0">
+            <StackPanel>
+                <Image Source="1.jpg" MaxHeight="150"/>
+                <TextBlock FontSize="16" FontFamily="Impact" HorizontalAlignment="Center">Антон</TextBlock>
+                <Image Source="2.jpg" MaxHeight="150"/>
+                <TextBlock FontSize="16" FontFamily="Impact" HorizontalAlignment="Center">Не Антон</TextBlock>
+                <Image Source="3.jpg" MaxHeight="150"/>
+                <TextBlock FontSize="16" FontFamily="Impact" HorizontalAlignment="Center">Антонов</TextBlock>
+                <Image Source="4.jpg" MaxHeight="150"/>
+                <TextBlock FontSize="16" FontFamily="Impact" HorizontalAlignment="Center">Не видно</TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+        <TabControl Grid.Column="1" Margin="10" FontSize="12">
+            <TabItem Header="Инструменты">
+                <StackPanel>
+                    <Menu VerticalAlignment="Top" FontSize="12">
+                        <MenuItem Header="Файл">
+                            <MenuItem Header="Новый"></MenuItem>
+                            <MenuItem Header="Открыть"></MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="Редактировать">
+                            <MenuItem Header="Обрезать">
+                                <MenuItem Header="Обрезать квадрат"></MenuItem>
+                                <MenuItem Header="Произвольная обрезка"></MenuItem>
+                            </MenuItem>
+                            <MenuItem Header="Изменить цвет"></MenuItem>
+                        </MenuItem>
+                    </Menu>
+                    <TextBlock FontFamily="Impact" FontSize="20" Margin="5">Услуги</TextBlock>
+
+                    <ListBox FontSize="16" BorderBrush="White" Margin="-1">
+                        <ListBoxItem Padding="10">Фотография</ListBoxItem>
+                        <ListBoxItem Padding="10">Растуширование</ListBoxItem>
+                        <ListBoxItem Padding="10">Исправление недостатков</ListBoxItem>
+                        <ListBoxItem Padding="10">Изменение фона</ListBoxItem>
+                        <ListBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Редактировать"></MenuItem>
+                                <MenuItem Header="Удалить"></MenuItem>
+                                <MenuItem Header="Создать на основе"></MenuItem>
+                            </ContextMenu>
+                        </ListBox.ContextMenu>
+                    </ListBox>
+                </StackPanel>
+
+            </TabItem>
+            <TabItem Header="Расписание">
+                <StackPanel Margin="0">
+                    <WrapPanel>
+                        <TextBlock FontFamily="Impact" FontSize="20" Margin="5">Расписание</TextBlock>
+                        <DatePicker FontFamily="Impact" FontSize="16" Margin="20 5 5 5"></DatePicker>
+                    </WrapPanel>
+                    <ListBox FontSize="16">
+                        <ListBoxItem Padding="10">Антон (14:30)</ListBoxItem>
+                        <ListBoxItem Padding="10">Не Антон (16:30)</ListBoxItem>
+                        <ListBoxItem Padding="10">Антонов (18:30)</ListBoxItem>
+                        <ListBoxItem Padding="10">Антонина (12:30)</ListBoxItem>
+                    </ListBox>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+        <Viewbox Grid.Column="2" VerticalAlignment="Top">
+        <Calendar  SelectedDate="11/23/2022" FirstDayOfWeek="Sunday" IsTodayHighlighted="False" DisplayDate="11/23/2022">
+            <Calendar.BlackoutDates>
+                <CalendarDateRange Start="11/1/2022"  End="11/20/2022"></CalendarDateRange>
+            </Calendar.BlackoutDates>
+            </Calendar>
+        </Viewbox>
+    </Grid>
+</Window>
