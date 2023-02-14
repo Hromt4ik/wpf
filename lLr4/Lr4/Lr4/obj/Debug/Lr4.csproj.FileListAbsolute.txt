@@ -1,0 +1,16 @@
+O:\колледж\wpf\lLr4\Lr4\Lr4\bin\Debug\Lr4.exe.config
+O:\колледж\wpf\lLr4\Lr4\Lr4\bin\Debug\Lr4.exe
+O:\колледж\wpf\lLr4\Lr4\Lr4\bin\Debug\Lr4.pdb
+O:\колледж\wpf\lLr4\Lr4\Lr4\obj\Debug\Lr4.csproj.AssemblyReference.cache
+O:\колледж\wpf\lLr4\Lr4\Lr4\obj\Debug\Lr4.csproj.SuggestedBindingRedirects.cache
+O:\колледж\wpf\lLr4\Lr4\Lr4\obj\Debug\MainWindow.g.cs
+O:\колледж\wpf\lLr4\Lr4\Lr4\obj\Debug\App.g.cs
+O:\колледж\wpf\lLr4\Lr4\Lr4\obj\Debug\Lr4_MarkupCompile.cache
+O:\колледж\wpf\lLr4\Lr4\Lr4\obj\Debug\Lr4_MarkupCompile.lref
+O:\колледж\wpf\lLr4\Lr4\Lr4\obj\Debug\MainWindow.baml
+O:\колледж\wpf\lLr4\Lr4\Lr4\obj\Debug\Lr4.g.resources
+O:\колледж\wpf\lLr4\Lr4\Lr4\obj\Debug\Lr4.Properties.Resources.resources
+O:\колледж\wpf\lLr4\Lr4\Lr4\obj\Debug\Lr4.csproj.GenerateResource.cache
+O:\колледж\wpf\lLr4\Lr4\Lr4\obj\Debug\Lr4.csproj.CoreCompileInputs.cache
+O:\колледж\wpf\lLr4\Lr4\Lr4\obj\Debug\Lr4.exe
+O:\колледж\wpf\lLr4\Lr4\Lr4\obj\Debug\Lr4.pdb
