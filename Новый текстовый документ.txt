@@ -1,0 +1,27 @@
+CREATE TABLE Company (
+Id SERIAL PRIMARY KEY,
+Title VARCHAR(150),
+CEO VARCHAR(150),
+Capital bigint 
+);
+
+CREATE TABLE Phone (
+Id SERIAL PRIMARY KEY,
+Title VARCHAR(150),
+CompanyId  INTEGER,
+Price  numeric(15, 2),
+FOREIGN KEY (CompanyId) REFERENCES Company (Id)
+);
+
+INSERT INTO Company (Title, CEO, Capital) Values
+('Apple', 'aaa', 10000000),
+('Rusphone', 'vvp', 100),
+('Nigggger', 'bbb', 9786765),
+('Pineaple', 'ooo', 452362);
+
+INSERT INTO Phone (Title, CompanyId, Price) Values
+('Apple1', 1, 100.32),
+('Rusphone23', 2, 10.33),
+('Nigggger77', 3, 9786.32),
+('Pineaple5', 4, 452.65);
+
