@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lr4"
         mc:Ignorable="d"
-        Title="EditWinhdow" Height="450" Width="800">
+        Title="Редактирование"  Height="450" Width="400">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="2.5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" >Редактирование</TextBlock>
+        <StackPanel Grid.Row="1">
+            <TextBlock Margin="10 15 10 0">Название</TextBlock>
+            <TextBox Margin="10 5 10 0" Height="30" x:Name ="titleView"></TextBox>
+            <TextBlock Margin="10 15 10 0">Компания</TextBlock>
+            <ComboBox Margin="10 5 10 0" Height="30" SelectedValuePath="Id" Name="companyView">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Title}" ></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <TextBlock Margin="10 15 10 0" >Цена</TextBlock>
+            <TextBox Margin="10 5 10 0" Height="30" x:Name ="priceView"></TextBox>
+        </StackPanel>
+        <Button Margin="50 20 50 35" Grid.Row="2" Content="Изменить" x:Name="editButton" Click="editButton_Click"/>
     </Grid>
 </Window>
