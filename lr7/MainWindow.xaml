@@ -38,11 +38,11 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Название"
-                                    Binding="{Binding Path=Title}"/>
+                                    Binding="{Binding Path=Title}" x:Name="titleView"/>
                 <DataGridTextColumn Header="Компания"
-                                    Binding="{Binding Path=CompanyEnity.Title}"/>
+                                    Binding="{Binding Path=CompanyEntity.Title}" x:Name="companyView"/>
                 <DataGridTextColumn Header="Цена"
-                                    Binding="{Binding Path=Price}"/>
+                                    Binding="{Binding Path=Price}" x:Name="priceView"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Grid.Column="1" Grid.Row="1"   Background="Transparent" BorderThickness="0" Name="addButton" Click="addButton_Click" MaxWidth="50" Margin="0 0 520 0">

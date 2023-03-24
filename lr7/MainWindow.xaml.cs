@@ -23,53 +23,51 @@ namespace Lr4
     public partial class MainWindow : Window
     {
  
-        Phone tempPhone;
+        //Phone tempPhone;
 
         public MainWindow()
         {
             InitializeComponent();
-            //EndEditing();
             mainDataGridView.ItemsSource = DatabaseControl.GetPhonesForView();
             
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-
+            AddWindow win = new AddWindow();
+            win.Owner = this;
+            win.ShowDialog();
         }
 
-        //private bool Check()
-        //{
+        private void editButton_Click(object sender, RoutedEventArgs e)
+        {
+            Phone p = mainDataGridView.SelectedItem as Phone;
+            if(p != null)
+            {
+                EditWinhdow win = new EditWinhdow(p);
+                win.Owner = this;
+                win.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для изменения");
+            }
+        }
 
-        //    if ((InputTitle.Text == "") || (InputPrice.Text == "") || (companyViewInput.SelectedItem == null))
-        //    {
-        //        MessageBox.Show("Строки не должны быть пустыми", "Пожалуйста будьте внимательнее", MessageBoxButton.OK, MessageBoxImage.Error);
-        //        return false;
-        //    }
+        private void removeButton_Click(object sender, RoutedEventArgs e)
+        {
+            DatabaseControl.DelPhone(mainDataGridView.SelectedItem as Phone);
+            mainDataGridView.ItemsSource = null;
+            mainDataGridView.ItemsSource = DatabaseControl.GetPhonesForView();
+        }
 
-        //    try
-        //    {
-        //        InputPrice.Text = Convert.ToString(Math.Round(Convert.ToDecimal(InputPrice.Text), 2));
-        //    }
-        //    catch
-        //    {
-        //        MessageBox.Show("Идите в первый класс", "Вы число от цифры не отличаете?", MessageBoxButton.OK, MessageBoxImage.Error);
-        //        return false;
-        //    }
+        public void RefreshTable()
+        {
+            mainDataGridView.ItemsSource = null;
+            mainDataGridView.ItemsSource = DatabaseControl.GetPhonesForView();
+        }
 
-        //    if (InputPrice.Text.Length >= 17)
-        //    {
-        //        MessageBox.Show("Настолько дорого, что это число даже не влизает в базу данных", "Слишком дорого", MessageBoxButton.OK, MessageBoxImage.Error);
-        //        return false;
-        //    }
-
-        //    if (!(Convert.ToDecimal(InputPrice.Text) > 0))
-        //    {
-        //        MessageBox.Show("Нельзя продавать бесплано или давать деньги вместе с телефоном!!! Ты на что жить собрался?", "Ты че внатуре дурак что-ли?", MessageBoxButton.OK, MessageBoxImage.Error);
-        //        return false;
-        //    }
-        //    return true;
-        //}
+        
 
         //private void AddButton_Click(object sender, RoutedEventArgs e)
         //{

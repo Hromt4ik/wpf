@@ -16,7 +16,7 @@ namespace Lr4
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql(
-                "Host=localhost;Username=postgres;Password=root;Database=HromtsovSuperDataBase");
+                "Host=localhost;Username=postgres;Password=123;Database=Phones_db");
 
         }
 
