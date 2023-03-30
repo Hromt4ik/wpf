@@ -22,12 +22,12 @@ namespace Lr4
         static public bool check(Phone _tempPhone)
         {
 
-      
+
             string price = Convert.ToString(_tempPhone.Price);
 
             try
             {
-                
+
                 price = Convert.ToString(Math.Round(Convert.ToDecimal(price), 2));
             }
             catch
