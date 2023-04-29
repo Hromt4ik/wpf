@@ -1,0 +1,48 @@
+﻿<Page x:Class="Lr4.detail"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Lr4"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" d:Background="White"
+      Title="detail">
+
+    <Page.Resources>
+        <ControlTemplate x:Key="RoundButton">
+            <Border CornerRadius="25" BorderBrush="Black"
+                    BorderThickness="2" MaxHeight="50" MaxWidth="50"
+                    VerticalAlignment="Top">
+                <Image Source="Image/backArrow.png"></Image>
+            </Border>
+        </ControlTemplate>
+    </Page.Resources>
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Template="{StaticResource RoundButton}" Click="BackArrowButton_Click"/>
+
+        <StackPanel Orientation="Horizontal"  Grid.Column="1">
+            <Image x:Name="imagePageView" Source="{Binding Path = Image}" />
+            <StackPanel Orientation="Vertical">
+                <TextBlock FontSize="20" Margin="20 10 10 10">Название телефона:</TextBlock>
+                <TextBlock FontSize="20" Margin="20 10 10 10" Name="titlePageView" Text="{Binding Path = Title}" ></TextBlock>
+                <TextBlock FontSize="20" Margin="20 10 10 10">Производитель:</TextBlock>
+                <TextBlock FontSize="20" Margin="20 10 10 10" Name="companyPageView" Text="{Binding Path = CompanyEntity.Title}" ></TextBlock>
+                <TextBlock FontSize="20" Margin="20 10 10 10">Цена:</TextBlock>
+                <TextBlock FontSize="20" Margin="20 10 10 10" Name="pricePageView" Text="{Binding Path = Price}"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBlock FontSize="20" Margin="20 10 10 10">Описание:</TextBlock>
+            <TextBlock FontSize="20" Margin="20 10 10 10" Name="definitionPageView" Text="{Binding Path = Definition}" ></TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,44 @@
+﻿<Window x:Class="Lr4.AddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lr4"
+        mc:Ignorable="d"
+        Title="Добавление" Height="450" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.3*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="2.5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" > Добавление</TextBlock>
+        <StackPanel Grid.Row="1">
+            <TextBlock Margin="10 15 10 0">Название</TextBlock>
+            <TextBox Margin="10 5 10 0" Height="30" x:Name="titleView"></TextBox>
+            <TextBlock Margin="10 15 10 0">Компания</TextBlock>
+            <ComboBox Margin="10 5 10 0" Height="30"  Name="companyView" SelectedValuePath="Id">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Title}" ></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <TextBlock Margin="10 15 10 0">Цена</TextBlock>
+            <TextBox Margin="10 5 10 0" Height="30" x:Name="priceView"></TextBox>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Orientation="Horizontal" >
+                <TextBlock Margin="10 20 10 10">Изображение</TextBlock>
+                <Button Content="Выбрать..." Click="SelectImageButton_Click" Margin="10 20 15 10"></Button>
+            </StackPanel>
+        </StackPanel>
+        <Button Grid.ColumnSpan="2" MaxHeight="50" MinWidth="150" Grid.Row="2" HorizontalAlignment="Center" Content="Добавить" x:Name="addButton" Click="addButton_Click"/>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <TextBlock>Описание</TextBlock>
+            <TextBox x:Name="definitionBox" Height="225" Margin="5"></TextBox>
+        </StackPanel>
+    </Grid>
+</Window>

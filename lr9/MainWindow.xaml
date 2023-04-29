@@ -1,0 +1,68 @@
+﻿<Window x:Class="Lr4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lr4"
+        mc:Ignorable="d"
+        Title="Телефончики" Height="450" Width="800" MinWidth ="300" MinHeight="100">
+    <Grid>
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid Name="mainDataGridView" Grid.Column="1" Margin="0 10 0 0" AutoGenerateColumns="False"
+                  FontSize="16">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
+                    <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                    <Image Height="20" Source="/Image/edit-button.png" />
+                                </Button>
+                                <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                    <Image Source="/Image/remove.png" />
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Название"
+                                    Binding="{Binding Path=Title}" x:Name="titleView"/>
+                <DataGridTextColumn Header="Компания"
+                                    Binding="{Binding Path=CompanyEntity.Title}" x:Name="companyView"/>
+                <DataGridTextColumn Header="Цена"
+                                    Binding="{Binding Path=Price}" x:Name="priceView"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Column="1" Grid.Row="1"   Background="Transparent" BorderThickness="0" Name="addButton" Click="addButton_Click" MaxWidth="50" Margin="0 0 520 0">
+            <Image Source="/Image/plus.png" />
+        </Button>
+        </Grid>
+        <Frame Name="mainFrame" NavigationUIVisibility="Hidden" />
+    </Grid>
+</Window>
