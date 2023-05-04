@@ -58,8 +58,9 @@ namespace Lr4
 
         private void removeButton_Click(object sender, RoutedEventArgs e)
         {
-
-            File.Delete((mainDataGridView.SelectedItem as Phone).Image);
+            try { 
+                File.Delete((mainDataGridView.SelectedItem as Phone).Image);
+            } catch { }
             DatabaseControl.DelPhone(mainDataGridView.SelectedItem as Phone);
 
             mainDataGridView.ItemsSource = null;

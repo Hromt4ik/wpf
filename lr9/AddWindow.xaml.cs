@@ -23,7 +23,7 @@ namespace Lr4
     /// </summary>
     public partial class AddWindow : Window
     {
-        private const string _imageSourse = "O:\\колледж\\wpf\\lr9\\Lr4\\added_image";
+        private string _imageSourse = Environment.CurrentDirectory + "\\added_image";
 
         private OpenFileDialog _img;
 
@@ -35,8 +35,15 @@ namespace Lr4
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            string filePath = System.IO.Path.Combine(_imageSourse, _img.SafeFileName);
-            File.Copy(_img.FileName, filePath, true);
+            string filePath;
+
+            if (_img != null)
+            {
+                filePath = System.IO.Path.Combine(_imageSourse, _img.SafeFileName);
+                File.Copy(_img.FileName, filePath, true);
+            }else{
+                filePath = "../Image/No_image.png";
+            }
 
 
             DatabaseControl.AddPhone(new Phone
@@ -50,14 +57,6 @@ namespace Lr4
 
             (this.Owner as MainWindow).RefreshTable();
             this.Close();
-        }
-
-
-
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
 
         private void SelectImageButton_Click(object sender, RoutedEventArgs e)

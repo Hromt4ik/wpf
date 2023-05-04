@@ -14,7 +14,7 @@ namespace Lr4
         public int CompanyId { get; set; }
         public decimal Price { get; set; }
         public string Definition { get; set; } = "Круто";
-        public string Image { get; set; } = "O:\\колледж\\wpf\\lr7\\Lr4\\Image\\no_image.png";
+        public string Image { get; set; } = "C:\\Users\\student\\Downloads\\Lr6\\Lr4\\Lr4\\bin\\Debug\\Image\\No_image.png";
         public Company CompanyEntity { get; set; }
     }
 }

@@ -56,6 +56,8 @@ namespace Lr4
                 _phone.Title = phone.Title;
                 _phone.Price = phone.Price;
                 _phone.CompanyId = phone.CompanyId;
+                _phone.Definition = phone.Definition;
+                _phone.Image = phone.Image;
 
                 ctx.SaveChanges();
             }

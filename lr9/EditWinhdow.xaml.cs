@@ -22,7 +22,7 @@ namespace Lr4
     public partial class EditWinhdow : Window
     {
 
-        private const string _imageSourse = "O:\\колледж\\wpf\\lr9\\Lr4\\added_image";
+        private string _imageSourse = Environment.CurrentDirectory + "\\added_image";
 
         private OpenFileDialog _img;
 
@@ -44,17 +44,13 @@ namespace Lr4
             _tempPhone.CompanyId = (int)companyView.SelectedValue;
             _tempPhone.Price = Convert.ToDecimal(priceView.Text);
 
-            //hm... were there progremmer who went out  window, after coding???????
-            File.Delete(_tempPhone.Image);
+
             _tempPhone.Image = System.IO.Path.Combine(_imageSourse, _img.SafeFileName);
             File.Copy(_img.FileName, _tempPhone.Image, true);
 
-            //I delete somthing check because i has a lot of bugs f*** in this row:) 
             DatabaseControl.UpdatePhone(_tempPhone);
             (this.Owner as MainWindow).RefreshTable();
             this.Close();
-
-
 
         }
 

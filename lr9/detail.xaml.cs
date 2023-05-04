@@ -31,16 +31,12 @@ namespace Lr4
             definitionPageView.Text = _phone.Definition;
             companyPageView.Text = _phone.CompanyEntity.Title;
             pricePageView.Text = _phone.Price.ToString();
-            BitmapImage _bitmapImage = new BitmapImage();
-            using (Stream stream = File.OpenRead(_phone.Image))
-            {
-                _bitmapImage.BeginInit();
-                _bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-                _bitmapImage.StreamSource= stream;
-                _bitmapImage.EndInit();
-            }
 
-            imagePageView.Source = _bitmapImage;
+            try {
+                imagePageView.Source = new BitmapImage(new Uri(_phone.Image));
+            } catch {
+                imagePageView.Source = new BitmapImage(new Uri(Environment.CurrentDirectory + "\\Image\\No_image.png"));
+            }
 
 
         }
